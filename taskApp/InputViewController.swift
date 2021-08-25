@@ -7,6 +7,8 @@
 
 import UIKit
 import RealmSwift
+import UserNotifications    
+
 
 class InputViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
@@ -46,6 +48,8 @@ class InputViewController: UIViewController {
     
             self.realm.add(self.task, update: .modified)
         }
+        
+        setNotification(task: task)
 
         super.viewWillDisappear(animated)
     }

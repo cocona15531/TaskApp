@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import UserNotifications
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     @IBOutlet weak var search: UISearchBar!
@@ -110,7 +111,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText == "" {
-            // 文字列がない場合の処理
             taskArray = realm.objects(Task.self)
         } else {
             taskArray = realm
